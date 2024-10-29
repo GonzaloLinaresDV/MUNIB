@@ -7,18 +7,18 @@
 </head>
 <body>
 
-    <!-- Botón para copiar "Munib.cena" y abrir Mercado Pago en Transferencias -->
+    <!-- Botón que copia "Munib.cena" y luego abre la app de Mercado Pago en la sección de Transferencias -->
     <button onclick="copiarYAbrir()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
         Copiar "Munib.cena" y Abrir Transferencias
     </button>
 
     <script>
         function copiarYAbrir() {
-            // Copia "Munib.cena" al portapapeles sin mostrar nada
+            // Copia "Munib.cena" al portapapeles
             const texto = "Munib.cena";
             navigator.clipboard.writeText(texto).then(() => {
-                // Abre Mercado Pago en la sección de transferencias
-                window.location.href = "mercadopago://transfer_money";
+                // Usa un intent para abrir la sección de transferencias en Mercado Pago (solo en Android)
+                window.location.href = "intent://transfer_money#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end";
             }).catch(err => {
                 console.error("Error al copiar el texto: ", err);
             });
