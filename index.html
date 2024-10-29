@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abrir Mercado Pago</title>
+    <title>Abrir Transferencia en Mercado Pago</title>
 </head>
 <body>
 
-    <!-- Botón para abrir Mercado Pago -->
-    <button onclick="window.location.href='mercadopago://home'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
-        Abrir Mercado Pago
+    <!-- Botón para copiar "Munib.cena" y abrir Mercado Pago en Transferencias -->
+    <button onclick="copiarYAbrir()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Copiar "Munib.cena" y Abrir Transferencias
     </button>
+
+    <script>
+        function copiarYAbrir() {
+            // Copia "Munib.cena" al portapapeles
+            const texto = "Munib.cena";
+            navigator.clipboard.writeText(texto).then(() => {
+                alert("Texto copiado: " + texto);
+
+                // Abre Mercado Pago en la sección de transferencias
+                window.location.href = "mercadopago://transfer_money";
+            }).catch(err => {
+                console.error("Error al copiar el texto: ", err);
+            });
+        }
+    </script>
 
 </body>
 </html>
