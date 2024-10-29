@@ -14,11 +14,9 @@
 
     <script>
         function copiarYAbrir() {
-            // Copia "Munib.cena" al portapapeles
+            // Copia "Munib.cena" al portapapeles sin mostrar nada
             const texto = "Munib.cena";
             navigator.clipboard.writeText(texto).then(() => {
-                alert("Texto copiado: " + texto);
-
                 // Abre Mercado Pago en la sección de transferencias
                 window.location.href = "mercadopago://transfer_money";
             }).catch(err => {
