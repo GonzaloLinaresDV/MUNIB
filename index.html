@@ -8,8 +8,9 @@
         window.onload = function() {
             const palabra = "tuPalabra"; // Cambia "tuPalabra" por la palabra que deseas copiar
             navigator.clipboard.writeText(palabra).then(() => {
-                // Intenta abrir la app de Mercado Pago
-                window.open("mercadopago://", "_blank"); // Protocolo para abrir la app
+                setTimeout(() => {
+                    window.open("mercadopago://", "_blank");
+                }, 1000); // Espera 1 segundo
             }).catch(err => {
                 console.error('Error al copiar: ', err);
             });
