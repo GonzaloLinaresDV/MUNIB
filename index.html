@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abrir Mercado Pago con Alias</title>
     <script>
-        function abrirMercadoPago() {
-            const alias = "Munib.cena"; // Cambia "tuAlias" por el alias que deseas copiar
+        window.onload = function() {
+            const alias = "Munib.cena"; // Alias que deseas copiar
             navigator.clipboard.writeText(alias).then(() => {
-                // Intenta abrir la app de Mercado Pago
-                const opened = window.open("mercadopago://", "_blank");
+                const url = `mercadopago://send?to=${alias}`;
+                const opened = window.open(url, "_blank");
+
                 if (!opened) {
                     // Si no se abre la app, redirige a la web
                     window.location.href = "https://www.mercadopago.com.ar";
@@ -17,11 +18,10 @@
             }).catch(err => {
                 console.error('Error al copiar: ', err);
             });
-        }
+        };
     </script>
 </head>
 <body>
-    <a href="#" onclick="abrirMercadoPago()">Abrir Mercado Pago y copiar alias</a>
-    <p>Al hacer clic, se copiará el alias y se abrirá la app de Mercado Pago.</p>
+    <p>Redirigiendo a Mercado Pago...</p>
 </body>
 </html>
