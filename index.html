@@ -12,5 +12,19 @@
         Abrir Mercado Pago
     </button>
 
+    <!-- Botón para copiar texto -->
+    <button onclick="copyText()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Copiar 'Munib.cena'
+    </button>
+
+    <script>
+        function copyText() {
+            const text = "Munib.cena";
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Texto copiado: " + text);
+            });
+        }
+    </script>
+
 </body>
 </html>
