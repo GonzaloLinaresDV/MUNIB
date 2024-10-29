@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abrir Mercado Pago</title>
+    <title>Abrir Mercado Pago y Copiar Texto</title>
 </head>
 <body>
 
-    <!-- Botón para abrir Mercado Pago -->
-    <button onclick="window.location.href='mercadopago://home'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
-        Abrir Mercado Pago
-    </button>
-
-    <!-- Botón para copiar texto -->
-    <button onclick="copyText()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
-        Copiar 'Munib.cena'
+    <!-- Botón para abrir Mercado Pago y copiar texto -->
+    <button onclick="openAndCopy()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Abrir Mercado Pago y Copiar 'Munib.cena'
     </button>
 
     <script>
-        function copyText() {
+        function openAndCopy() {
             const text = "Munib.cena";
             navigator.clipboard.writeText(text).then(() => {
                 alert("Texto copiado: " + text);
+                window.location.href = 'mercadopago://home';
             });
         }
     </script>
