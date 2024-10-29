@@ -11,10 +11,20 @@
         window.onload = function() {
             const text = "Munib.cena";
             navigator.clipboard.writeText(text).then(() => {
-                // Esperar 2 segundos antes de redirigir
+                // Intenta abrir la app de Mercado Pago
                 setTimeout(() => {
-                    window.location.href = 'mercadopago://home';
-                }, 2000);
+                    const isAndroid = /Android/i.test(navigator.userAgent);
+
+                    if (isAndroid) {
+                        // Intent para Android
+                        window.location.href = "intent://home#Intent;scheme=mercadopago;package=com.mercadopago.wallet;end";
+                    } else {
+                        // Deep link genérico para otras plataformas
+                        window.location.href = 'mercadopago://home';
+                    }
+                }, 1000);
+            }).catch(err => {
+                console.error("Error al copiar el texto: ", err);
             });
         };
     </script>
