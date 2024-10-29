@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Palabra y Abrir Mercado Pago</title>
+    <script>
+        window.onload = function() {
+            const palabra = "tuPalabra"; // Cambia "tuPalabra" por la palabra que deseas copiar
+            navigator.clipboard.writeText(palabra).then(() => {
+                window.open("https://www.mercadopago.com.ar", "_blank");
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        };
+    </script>
+</head>
+<body>
+    <p>Redirigiendo a Mercado Pago...</p>
+</body>
+</html>
