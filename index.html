@@ -7,17 +7,17 @@
 </head>
 <body>
 
-    <!-- Botón para abrir la sección de transferencias de Mercado Pago y copiar texto -->
+    <!-- Botón para abrir Mercado Pago y copiar texto -->
     <button onclick="openAndCopy()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
-        Abrir Transferencias en Mercado Pago y Copiar 'Munib.cena'
+        Abrir Mercado Pago y Copiar 'Munib.cena'
     </button>
 
     <script>
         function openAndCopy() {
             const text = "Munib.cena";
             navigator.clipboard.writeText(text).then(() => {
-                // Abrir la sección de transferencias
-                window.location.href = 'mercadopago://transfers';
+                alert("Texto copiado: " + text);
+                window.location.href = 'mercadopago://home';
             });
         }
     </script>
