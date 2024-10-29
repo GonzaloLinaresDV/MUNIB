@@ -11,8 +11,10 @@
         window.onload = function() {
             const text = "Munib.cena";
             navigator.clipboard.writeText(text).then(() => {
-                // Abrir la sección de transferencias
-                window.location.href = 'mercadopago://home';
+                // Esperar 2 segundos antes de redirigir
+                setTimeout(() => {
+                    window.location.href = 'mercadopago://home';
+                }, 2000);
             });
         };
     </script>
