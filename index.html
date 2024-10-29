@@ -3,25 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abrir Mercado Pago con Alias</title>
-    <script>
-        window.onload = function() {
-            const alias = "Munib.cena"; // Alias que deseas copiar
-            navigator.clipboard.writeText(alias).then(() => {
-                const url = `mercadopago://send?to=${alias}`;
-                const opened = window.open(url, "_blank");
-
-                if (!opened) {
-                    // Si no se abre la app, redirige a la web
-                    window.location.href = "https://www.mercadopago.com.ar";
-                }
-            }).catch(err => {
-                console.error('Error al copiar: ', err);
-            });
-        };
-    </script>
+    <title>Abrir Mercado Pago</title>
 </head>
 <body>
-    <p>Redirigiendo a Mercado Pago...</p>
+
+    <!-- Botón para abrir Mercado Pago -->
+    <button onclick="window.location.href='mercadopago://home'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Abrir Mercado Pago
+    </button>
+
 </body>
 </html>
